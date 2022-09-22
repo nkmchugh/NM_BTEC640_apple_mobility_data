@@ -10,6 +10,7 @@ https://covid19.apple.com/mobility
 
 ## Log
 
+* 2022-09-21: Add git infrastructure to project and push to GitHub
 * 2022-09-18: A new version of the code was created to refractor the 
 code to be more general and allow for any state to be subsetted from the 
 larger file.
