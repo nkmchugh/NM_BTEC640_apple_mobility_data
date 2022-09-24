@@ -8,8 +8,14 @@ The aim of this project is to analyze the mobility data made available by Apple.
 The data was available from the following URL:
 https://covid19.apple.com/mobility
 
-## Log
+It currently uses dplyr to work with some of the tabbular data.Eventually, it
+will also include the use of ggplot to visualize the dataset.
 
+## Change Log
+
+* 2022-09-24: Added second script to use dplyr to tally up the count of cities
+and counties in a given state that have data from the different transportation 
+types
 * 2022-09-21: Add git infrastructure to project and push to GitHub
 * 2022-09-18: A new version of the code was created to refractor the 
 code to be more general and allow for any state to be subsetted from the 
