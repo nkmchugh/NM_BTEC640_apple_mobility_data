@@ -10,7 +10,7 @@
 source("code/functions/02_counties_cities_count_function.R")
 
 # run the subset function with the for loop function
-for (subset_data_files in 
+for (subset_data_files in
      c("output/Alaska_subset_applemobilitytrends-2022-04-12.csv",
        "output/Arizona_subset_applemobilitytrends-2022-04-12.csv",
        "output/California_subset_applemobilitytrends-2022-04-12.csv",
@@ -20,7 +20,3 @@ for (subset_data_files in
     input_file_name = subset_data_files
   )
 }
-
-# run the subset function
-counties_cities_count_function(
-  input_file_name = "output/California_subset_applemobilitytrends-2022-04-12.csv")

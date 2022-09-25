@@ -14,30 +14,26 @@ library("dplyr")
 # script.
 
 # start of the main function
-counties_cities_count_function <- function(input_file_name){
-  
+counties_cities_count_function <- function(input_file_name) {
+
   # load in the dataset from the previous script
   state_data <- read.csv(input_file_name)
-  
+
   # Check that the subset data actually has data in it
   if (nrow(state_data) == 0) {
     stop("ERROR: no data in the input file. Check your file")
   }
-  
+
   # starting with the dplyr chains
   count_cities_counties_by_type <- state_data %>%
-    select(geo_type, region, transportation_type) %>%
-    group_by(geo_type, transportation_type) %>%
+    select("geo_type", "region", "transportation_type") %>%
+    group_by("geo_type", "transportation_type") %>%
     tally()
-  
+
   # write out the result of the dplyr chain
-  write.csv(count_cities_counties_by_type, 
+  write.csv(count_cities_counties_by_type,
             file = paste0("output/",
                           "cities_counties_count",
                           "_",
-                          basename(input_file_name))) 
+                          basename(input_file_name)))
 }
-
-counties_cities_count_function(
-  input_file_name = "output/California_subset_applemobilitytrends-2022-04-12.csv")
-  
