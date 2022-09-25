@@ -6,23 +6,21 @@
 # nkmchugh@dons.usfca.edu
 # September 24, 2022
 
-# load the "dplyr" package
-library("dplyr")
+# load the function
+source("code/functions/02_counties_cities_count_function.R")
 
-# get a count of the number of cities and counties in a given state that have
-# driving mobility data. The input to this will be the output of the previous
-# script.
+# run the subset function with the for loop function
+for (subset_data_files in 
+     c("output/Alaska_subset_applemobilitytrends-2022-04-12.csv",
+       "output/Arizona_subset_applemobilitytrends-2022-04-12.csv",
+       "output/California_subset_applemobilitytrends-2022-04-12.csv",
+       "output/Hawaii_subset_applemobilitytrends-2022-04-12.csv",
+       "output/Washington_subset_applemobilitytrends-2022-04-12.csv")){
+  counties_cities_count_function(
+    input_file_name = subset_data_files
+  )
+}
 
-# load in the dataset from the previous script
-input_file_name <- "output/California_subset_applemobilitytrends-2022-04-12.csv"
-state_data <- read.csv(input_file_name)
-
-# starting with the dplyr chains
-count_cities_counties_by_type <- state_data %>%
-  select(geo_type, region, transportation_type) %>%
-  group_by(geo_type, transportation_type) %>%
-  tally()
-
-# write out the result of the dplyr chain
-write.csv(count_cities_counties_by_type,
-          "output/california_cities_counties_count.csv")
+# run the subset function
+counties_cities_count_function(
+  input_file_name = "output/California_subset_applemobilitytrends-2022-04-12.csv")
