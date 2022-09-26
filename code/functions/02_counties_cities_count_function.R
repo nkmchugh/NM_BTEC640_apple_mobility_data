@@ -26,8 +26,8 @@ counties_cities_count_function <- function(input_file_name) {
 
   # starting with the dplyr chains
   count_cities_counties_by_type <- state_data %>%
-    select("geo_type", "region", "transportation_type") %>%
-    group_by("geo_type", "transportation_type") %>%
+    select(geo_type, region, transportation_type) %>%
+    group_by(geo_type, transportation_type) %>%
     tally()
 
   # write out the result of the dplyr chain
