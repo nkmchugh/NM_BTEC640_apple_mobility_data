@@ -4,25 +4,35 @@
 
 # Nicole McHugh
 # nkmchugh@dons.usfca.edu
-# September 18, 2022
+# September 28, 2022
+
+# load the readr package
+library("readr")
+library("dplyr")
 
 subset_data_to_a_state <- function(input_file_name, state_name) {
   # read in the complete .csv file
-  all_covid_data <- read.csv(input_file_name)
+  # use readr function to prevent column names from changing
+  all_covid_data <- readr::read_csv("data/raw_data/applemobilitytrends-2022-04-12.csv")
 
   # Subset data to just a state of our choosing
-  state_dataset <- all_covid_data[all_covid_data$sub.region == state_name, ]
+  state_data <- all_covid_data %>% 
+    dplyr::filter(`sub-region` == state_name)
 
   # Check that the subset data actually has data in it
-  if (nrow(state_dataset) == 0) {
+  if (nrow(state_data) == 0) {
     stop("ERROR: no rows matching with the given state name. Check for typos.")
   }
+  
+  # editing code that fixes spaces in state names in output file
+  state_no_space <- gsub(state_name, pattern = " ", replacement = "_")
 
   # save the state data to a new csv file in the output directory
-  write.csv(state_dataset, file =
+  readr::write_csv(state_data, file =
             paste0("output/",
-                  state_name,
+                  state_no_space,
                   "_subset_",
-                  basename(input_file_name)),
-            row.names = FALSE)
+                  basename(input_file_name)))
+ # line of code to get output of function into environment
+   return(state_data)
 }
