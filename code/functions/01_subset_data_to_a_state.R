@@ -13,17 +13,17 @@ library("dplyr")
 subset_data_to_a_state <- function(input_file_name, state_name) {
   # read in the complete .csv file
   # use readr function to prevent column names from changing
-  all_covid_data <- readr::read_csv("data/raw_data/applemobilitytrends-2022-04-12.csv")
+  all_covid_data <- readr::read_csv(input_file_name)
 
   # Subset data to just a state of our choosing
-  state_data <- all_covid_data %>% 
+  state_data <- all_covid_data %>%
     dplyr::filter(`sub-region` == state_name)
 
   # Check that the subset data actually has data in it
   if (nrow(state_data) == 0) {
     stop("ERROR: no rows matching with the given state name. Check for typos.")
   }
-  
+
   # editing code that fixes spaces in state names in output file
   state_no_space <- gsub(state_name, pattern = " ", replacement = "_")
 
