@@ -4,9 +4,10 @@
 
 # Nicole McHugh
 # nkmchugh@dons.usfca.edu
-# September 24, 2022
+# September 28, 2022
 
 # load the "dplyr" package
+library("readr")
 library("dplyr")
 
 # get a count of the number of cities and counties in a given state that have
@@ -17,7 +18,7 @@ library("dplyr")
 counties_cities_count_function <- function(input_file_name) {
 
   # load in the dataset from the previous script
-  state_data <- read.csv(input_file_name)
+  state_data <- readr::read_csv(input_file_name)
 
   # Check that the subset data actually has data in it
   if (nrow(state_data) == 0) {
@@ -31,7 +32,7 @@ counties_cities_count_function <- function(input_file_name) {
     tally()
 
   # write out the result of the dplyr chain
-  write.csv(count_cities_counties_by_type,
+  readr::write_csv(count_cities_counties_by_type,
             file = paste0("output/",
                           "cities_counties_count",
                           "_",
