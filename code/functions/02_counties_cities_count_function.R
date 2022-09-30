@@ -6,7 +6,7 @@
 # nkmchugh@dons.usfca.edu
 # September 28, 2022
 
-# load the "dplyr" package
+# load the "readr" and dplyr" package
 library("readr")
 library("dplyr")
 
