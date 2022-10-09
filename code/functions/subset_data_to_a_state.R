@@ -29,7 +29,7 @@ subset_data_to_a_state <- function(input_file_name, state_name) {
 
   # save the state data to a new csv file in the output directory
   readr::write_csv(state_data, file =
-            paste0("output/",
+            paste0("output/subsetted_state_wide/",
                   state_no_space,
                   "_subset_",
                   basename(input_file_name)))

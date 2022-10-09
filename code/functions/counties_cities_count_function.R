@@ -33,7 +33,7 @@ counties_cities_count_function <- function(input_file_name) {
 
   # write out the result of the dplyr chain
   readr::write_csv(count_cities_counties_by_type,
-            file = paste0("output/",
+            file = paste0("output/subsetted_state_tallied/",
                           "cities_counties_count",
                           "_",
                           basename(input_file_name)))
