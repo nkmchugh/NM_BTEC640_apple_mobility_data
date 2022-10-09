@@ -10,11 +10,11 @@ library("readr")
 library("tidyr")
 
 # start of the function
-wide_to_long_subset <- function(input_file_name){
-  
+wide_to_long_subset <- function(input_file_name) {
+
   # read the subset file
   state_data <- readr::read_csv(input_file_name)
-  
+
   #pipeline to edit the subset file to long format
   long_subset_data <- state_data %>%
     tidyr::pivot_longer(cols = starts_with("20"),
