@@ -19,13 +19,11 @@ wide_to_long_subset <- function(input_file_name){
   long_subset_data <- state_data %>%
     tidyr::pivot_longer(cols = starts_with("20"),
                         names_to = "date",
-                        values_to = "mobility percentage")
+                        values_to = "relative_mobility")
 
   # write the pivot longer function to a csv file
   readr::write_csv(long_subset_data,
-                   file = paste0("output/",
+                   file = paste0("output/subsetted_state_long/",
                                  "long_",
                                  basename(input_file_name)))
 }
-
-wide_to_long_subset("output/Arizona_subset_applemobilitytrends-2022-04-12.csv")
