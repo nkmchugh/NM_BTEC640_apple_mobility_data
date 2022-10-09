@@ -8,7 +8,7 @@
 # September 24, 2022
 
 # load the function
-source("code/functions/01_subset_data_to_a_state.R")
+source("code/functions/subset_data_to_a_state.R")
 
 # run the subset function with the for loop function
 for (`sub-region` in c("California", "Hawaii", "Alaska", "Arizona",
