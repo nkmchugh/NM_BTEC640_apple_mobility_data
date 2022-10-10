@@ -1,0 +1,7 @@
+geo_type,transportation_type,n
+city,driving,5
+city,transit,5
+city,walking,5
+county,driving,61
+county,transit,12
+county,walking,18
