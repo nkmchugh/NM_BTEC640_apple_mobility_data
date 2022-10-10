@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE, message = TRUE)
 
 ```{r set-parameters}
 # set the state to work with
-state_to_analyze <- "New York"
+state_to_analyze <- "New Mexico"
 
 # sanitizing the state name for output files
 state_no_spaces <- gsub(state_to_analyze,
@@ -43,7 +43,7 @@ source("code/functions/counties_cities_count_function.R")
 source("code/functions/wide_to_long_subset.R")
 ```
 
-## Background and Objectives
+## Project Description
 
 This rmarkdown fill use the `ggplot2` [@ggplot2] and `dplyr`[@dplyr] packages to analyze the Apple maps mobility data from the time before the COVID-19 pandemic to April 12, 2022.
 
@@ -51,7 +51,7 @@ The goal will be to create a subset to a particular state, tally the number of c
 
 The state that this document will analyze is `r state_to_analyze`.
 
-## Data Processing
+## Subsetting data
 
 ```{r subset-state}
 # subset out to the chosen state using the variables set above
@@ -59,6 +59,8 @@ state_subset <- subset_data_to_a_state(
   input_file_name = global_file_to_process,
   state_name = state_to_analyze)
 ```
+
+## Wide to long data
 
 ```{r make-subset-long}
 # convert the subsetted state data from wide to long format
@@ -69,6 +71,8 @@ long_subset <- wide_to_long_subset(
                            core_name,
                            ".csv"))
 ```
+
+## Tallied subset
 
 ```{r tallied-subset}
 # tally up the number of cities and counties in the state that have mobility
@@ -82,7 +86,6 @@ tallied_subset <- counties_cities_count_function(
 ```
 
 ## Figures
-
 ```{r plot-tallied}
 # create a grouped barplot of the tallied data to include in the knitted
 # documents, and save that figure to the output/figures directory a png
@@ -118,7 +121,7 @@ timeseries_plot <- long_subset %>%
              y = mean_mobility)) +
   geom_line() +
   labs(title = paste("Statewide mean relative mobility driving levels in",
-                     state_no_spaces,
+                     state_to_analyze,
                      "during COVID"),
        x = "Date",
        y = "Mean relative mobility")
@@ -133,7 +136,32 @@ timeseries_plot
 
 ```
 
-### Session Info
+```{r scatter-plot}
+# create scatter plot that maps all transportation types within the long
+# subsetted data over time, save the figure as a png file in the output/figure
+# folder, and display the figure in the knitted document
+scatter_plot <- long_subset %>%
+  group_by(transportation_type) %>%
+  ggplot(aes(x = lubridate::ymd(date),
+             y = relative_mobility,
+            color = transportation_type)) +
+  geom_point() +
+  labs(title = paste(state_to_analyze,
+                     "mobility scatter plot during COVID"),
+       x = "Date",
+       y = "Relative mobility")
+ggsave(plot = scatter_plot,
+       filename = paste0("output/figures/",
+                         state_no_spaces,
+                         core_name,
+                         "_scatter_plot.png"))
+scatter_plot
+
+```
+
+
+## Session Info
+
 ```{r session-info}
 devtools::session_info()
 ```
