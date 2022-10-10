@@ -14,7 +14,7 @@ will also include the use of ggplot to visualize the dataset.
 ## Change Log
 
 * 2022-10-09: Rename and modify scripts accordingly to suggestions made, and
-create an Rmd file to combine the entire analysis.
+create an Rmd file to combine the entire analysis project.
 * 2022-09-29: Add third function produce long data, and implemented readr 
 function on other scripts.
 * 2022-09-24: Added second script to use dplyr to tally up the count of cities
