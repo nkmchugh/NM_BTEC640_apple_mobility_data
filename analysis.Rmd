@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE, message = TRUE)
 
 ```{r set-parameters}
 # set the state to work with
-state_to_analyze <- "New Mexico"
+state_to_analyze <- "Washington"
 
 # sanitizing the state name for output files
 state_no_spaces <- gsub(state_to_analyze,
@@ -86,6 +86,7 @@ tallied_subset <- counties_cities_count_function(
 ```
 
 ## Figures
+
 ```{r plot-tallied}
 # create a grouped barplot of the tallied data to include in the knitted
 # documents, and save that figure to the output/figures directory a png
