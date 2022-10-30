@@ -23,7 +23,7 @@ sequence_file="$1"
 # cleaned version of the command with defensive programming integrated into it:
 zcat "$sequence_file" | grep -c ">"
 
-# tally the number of SARS-CoV-2 sequences in the data set from each country, and sort the output from largest to smallest. in the fasta file the
-# country name is in the 21st column, the sort| uniq -c will keep count of all unique country names, and sort -rn lists the countries in order of
-# most frequent at the top to the least frequent at the bottom
-zcat  "$sequence_file" | awk -F'|' '{print $21}'| sort | uniq -c | sort -rn
+# tally the number of SARS-CoV-2 sequences in the data set from each country, and sort the output from largest to smallest. In the fasta file the
+# country name is in the 21st column, the sort| uniq -c will keep count of all unique country names, sort -rn lists the countries in order of
+# most frequent at the top to the least frequent at the bottom, and the last command will create a text file with all the data.
+zcat "$sequence_file" | awk -F'|' '{print $21}'| sort | uniq -c | sort -rn > output/sequence_summary.txt
