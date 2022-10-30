@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# A bash script to parse SARS-CoV-2 sequence data from NCBI's GeneBank
+set -euo pipefail
 
 # Nicole McHugh
 # October 29, 2022
 # nkmchugh@dons.usfca.edu
+
+# a bash script to parse SARS-CoV-2 sequence data from NCBI's GeneBank
 
 # defensive programming to check command line argument
 if [ $# -eq 0 ]
