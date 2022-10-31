@@ -24,7 +24,7 @@ sequence_file="$1"
 # fasta files are organized where a group of data starts off with the sequence identifier. This sequence identifier starts with ">" symbol, so using grep we can count how many ">"
 # symbols there are in this file which correlate to the number of sequences in this file. To make the result of this script interpretable, the first line beginning wwith echo was added.
 # cleaned version of the command with defensive programming integrated into it:
-echo "sequences found:"
+echo "Number of sequences found:"
 zcat "$sequence_file" | grep -c ">"
 
 # tally the number of SARS-CoV-2 sequences in the data set from each country, and sort the output from largest to smallest. In the fasta file the
