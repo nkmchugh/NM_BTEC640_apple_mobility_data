@@ -163,6 +163,7 @@ ggsave(plot = scatter_plot,
 scatter_plot
 
 ```
+
 ```{r plot-sequence-data, fig.height=12}
 # read in the count of the sequences by country (2 columns)
 seqs_by_country <- readr::read_table(params$seqdata,
@@ -182,6 +183,7 @@ seq_count_plot <- ggplot(data = seqs_by_country,
   labs(title = "Count of SARS-CoV-2 sequences per country",
        x = "Count of sequences",
        y = "Country Name")
+
 ggsave(plot = seq_count_plot,
        filename = "output/figures/seq_count_plot.png")
 
