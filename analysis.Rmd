@@ -1,12 +1,13 @@
 ---
 title: "Analysis of Apple Mobility Data During the COVID-era"
 author: "Nicole McHugh"
-date: "2022-10-09"
+date: "2022-11-06"
 output: html_document
 bibliography: references.bib
 params:
   state: "California"
   data: "data/raw_data/applemobilitytrends-2022-04-12.csv"
+  seqdata: "output/sequence_summary.txt"
 ---
 
 ```{r setup, include=FALSE}
@@ -162,6 +163,11 @@ ggsave(plot = scatter_plot,
 scatter_plot
 
 ```
+```{r plot-sequence-data, fig.height=12}
+
+
+```
+
 
 
 ## Session Info
