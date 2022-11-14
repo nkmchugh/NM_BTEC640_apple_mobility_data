@@ -7,7 +7,7 @@ REPORT_PATH	:= $(OUTPUT)/$(REPORT)
 R_FUNCTIONS	:= $(wildcard code/functions/*.R)
 MOBILITY_DATA	:= data/raw_data/applemobilitytrends-2022-04-12.csv
 SEQ_DATA	:= /blast-db/sars-cov-2-seq-data/2022-10-17_ncbi_sars-cov-2-sequences.fasta.gz
-SEQ_SUMMARY	:= $(OUTPU)/sequence_summary.txt
+SEQ_SUMMARY	:= $(OUTPUT)/sequence_summary.txt
 
 all: $(REPORT_PATH)
 
@@ -15,7 +15,7 @@ $(REPORT_PATH): analysis.Rmd references.bib $(R_FUNCTIONS) $(SEQ_SUMMARY) $(MOBI
 	bash run_analyze_covid_pipeline.sh "$(STATE)" "$(MOBILITY_DATA)" "$(SEQ_SUMMARY)"
 
 $(SEQ_SUMMARY): code/process_sequences.sh $(SEQ_DATA)
-	bash code/process_sequences.sh "$(SEQ_DATA)" > "$(SEQ_SUMMARY)"
+	bash code/process_sequences.sh "$(SEQ_DATA)" ALL > "$(SEQ_SUMMARY)"
 
 clean:
 	rm -fv output/*.html
