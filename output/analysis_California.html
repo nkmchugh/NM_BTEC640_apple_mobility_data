@@ -449,7 +449,7 @@ state_subset &lt;- subset_data_to_a_state(
   input_file_name = global_file_to_process,
   state_name = state_to_analyze)</code></pre>
 <pre><code>## 
-## ── Column specification ───────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────────────────────────────
 ## cols(
 ##   .default = col_double(),
 ##   geo_type = col_character(),
@@ -473,7 +473,7 @@ long_subset &lt;- wide_to_long_subset(
                            core_name,
                            &quot;.csv&quot;))</code></pre>
 <pre><code>## 
-## ── Column specification ───────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────────────────────────────
 ## cols(
 ##   .default = col_double(),
 ##   geo_type = col_character(),
@@ -498,7 +498,7 @@ tallied_subset &lt;- counties_cities_count_function(
                            core_name,
                            &quot;.csv&quot;))</code></pre>
 <pre><code>## 
-## ── Column specification ───────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────────────────────────────
 ## cols(
 ##   .default = col_double(),
 ##   geo_type = col_character(),
@@ -588,7 +588,7 @@ seqs_by_country &lt;- readr::read_table(params$seqdata,
                                      col_names = c(&quot;count&quot;,
                                                    &quot;country&quot;))</code></pre>
 <pre><code>## 
-## ── Column specification ───────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────────────────────────────
 ## cols(
 ##   count = col_double(),
 ##   country = col_character()
@@ -673,7 +673,6 @@ ggsave(plot = seq_count_plot,
 ##  rlang         1.0.6   2022-09-24 [1] RSPM (R 4.0.5)
 ##  rmarkdown     2.4     2020-09-30 [1] RSPM (R 4.0.2)
 ##  rprojroot     1.3-2   2018-01-03 [1] RSPM (R 4.0.0)
-##  rstudioapi    0.11    2020-02-07 [1] RSPM (R 4.0.0)
 ##  scales        1.1.1   2020-05-11 [1] RSPM (R 4.0.0)
 ##  sessioninfo   1.1.1   2018-11-05 [1] RSPM (R 4.0.0)
 ##  stringi       1.5.3   2020-09-09 [1] RSPM (R 4.0.2)
