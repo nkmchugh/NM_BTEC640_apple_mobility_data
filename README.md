@@ -13,6 +13,7 @@ the dataset.
 
 ## Change Log
 
+* 2022-11-13: Modify bash script "process_sequence.sh" to produce the correct output for the previous assignment. Create a Makefile to automate production of the final analysis report with the new covid data.
 * 2022-10-29: Parse the zip file containing the SARS-CoV-2 data up to October 17th, 2022. Create a bash script 
 with defensive programming to count the total number of sequence data in the file, and tally and sort the number 
 of dataset from each country from largest to smallest
