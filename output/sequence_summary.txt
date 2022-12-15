@@ -1,0 +1,75 @@
+ 971269 USA
+ 662386 United Kingdom
+ 386969 Denmark
+ 203594 Germany
+  46745 France
+  30851 Switzerland
+  23092 Slovakia
+  20094 Iceland
+  13937 New Zealand
+   9992 Brazil
+   6769 Mexico
+   5748 Bahrain
+   4805 South Africa
+   3572 Thailand
+   3318 Kenya
+   3273 Japan
+   2128 Viet Nam
+   1355 India
+   1081 Iran
+   1074 Liechtenstein
+    642 Hong Kong
+    461 Gambia
+    459 Laos
+    402 Pakistan
+    380 Italy
+    314 Bangladesh
+    301 Djibouti
+    298 Paraguay
+    296 Peru
+    294 Mongolia
+    290 Jamaica
+    289 Malawi
+    283 Gabon
+    250 Iraq
+    237 Malaysia
+    203 South Korea
+    199 Seychelles
+    171 Taiwan
+    123 Sweden
+    105 Bhutan
+     89 Dominican Republic
+     85 Uganda
+     84 Colombia
+     76 Argentina
+     67 Indonesia
+     56 
+     51 China
+     44 Egypt
+     40 West Bank
+     40 Myanmar
+     39 Australia
+     30 Russia
+     30 Nigeria
+     27 Tanzania
+     27 Netherlands
+     25 Philippines
+     19 Ireland
+     19 Belgium
+     15 Finland
+     13 Canada
+     12 Uzbekistan
+     10 Palau
+      8 Turkey
+      8 Nepal
+      8 Israel
+      6 Spain
+      6 Singapore
+      5 Chile
+      3 Ecuador
+      3 Austria
+      2 Saudi Arabia
+      1 Suriname
+      1 Norway
+      1 Kazakhstan
+      1 Hungary
